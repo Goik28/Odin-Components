@@ -1,0 +1,9 @@
+.menu{
+    width: 80px;
+    color: white;
+    background-color: blue;
+}
+
+.menu-item{
+    display: none;
+}
