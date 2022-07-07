@@ -1,9 +1,44 @@
-.menu{
-    width: 80px;
-    color: white;
-    background-color: blue;
+:root {
+  --mainMenu-color: white;
+  --mainMenu-background-color: #0ea5e9;
+  --mainMenuHover-background-color: #0284c7;
 }
 
-.menu-item{
-    display: none;
+.menu {
+  width: 150px;
+  padding: 0px;
+  color: var(--mainMenu-color);
+  background-color: var(--mainMenu-background-color);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu-item {
+  display: none;
+  list-style: none;
+  color: var(--mainMenu-color);
+  background-color: var(--mainMenu-background-color);
+  font-size: 1.5rem;
+  border: solid 0px #bae6fd;
+  border-bottom-width: 1px;
+}
+
+.menu-item:first-child {
+  border-top-width: 1px;
+}
+
+.menu-item:last-child {
+  border-bottom-width: 0px;
+}
+
+.menu-item-show {
+  display: block;
+}
+
+.menu:hover,
+.menu-item-show:hover {
+  background-color: var(--mainMenuHover-background-color);
 }

@@ -28,7 +28,6 @@ module.exports = {
             loader: 'html-loader',
             options: {
               minimize: true,
-              interpolation: false,
             },
           },
         ],
