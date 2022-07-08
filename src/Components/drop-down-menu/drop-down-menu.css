@@ -21,7 +21,7 @@
   background-color: var(--mainMenuHover-background-color);
 }
 
-.list-container{
+.drop-down-menu-container{
   position: absolute;
   z-index: 1;
   top: 30px;
@@ -29,7 +29,7 @@
   padding: 0px;
 }
 
-.menu-item {
+.drop-down-menu-item {
   display: none;
   list-style: none;
   padding: 5px;
@@ -40,15 +40,15 @@
   border-bottom-width: 1px;
 }
 
-.menu-item:last-child {
+.drop-down-menu-item:last-child {
   border-bottom-width: 0px;
 }
 
-.menu-item-show {
+.drop-down-menu-item-show {
   display: block;
 }
 
-.menu-item-show:hover {
+.drop-down-menu-item-show:hover {
   background-color: var(--mainMenuHover-background-color);
   border-bottom-width: 1px;
 }

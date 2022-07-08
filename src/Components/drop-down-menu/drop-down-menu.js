@@ -16,22 +16,22 @@ export function createDropDownMenu() {
 function createList() {
   const ol = document.createElement("ol");
   ol.innerHTML = html;
-  ol.classList.add("list-container");
+  ol.classList.add("drop-down-menu-container");
   return ol;
 }
 
 function turnVisible() {
-  const menuItems = Array.from(document.getElementsByClassName("menu-item"));
+  const menuItems = Array.from(document.getElementsByClassName("drop-down-menu-item"));
   menuItems.forEach((element) => {
-    element.classList.add("menu-item-show");
+    element.classList.add("drop-down-menu-item-show");
   });
   document.getElementsByClassName("header")[0].classList.add("header-lock");
 }
 
 function turnInvisible() {
-  const menuItems = Array.from(document.getElementsByClassName("menu-item"));
+  const menuItems = Array.from(document.getElementsByClassName("drop-down-menu-item"));
   menuItems.forEach((element) => {
-    element.classList.remove("menu-item-show");
+    element.classList.remove("drop-down-menu-item-show");
   });
   document.getElementsByClassName("header")[0].classList.remove("header-lock");
 }
