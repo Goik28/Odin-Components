@@ -12,6 +12,8 @@
     margin: 0px;
     padding: 0px;
     display: flex;
+    user-select: none;
+    cursor: grab;
   }
   
   .tabs-menu-item {
