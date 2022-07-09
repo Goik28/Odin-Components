@@ -8,7 +8,7 @@
   .tabs-menu-container{    
     width: 550px;
     height: 50px;
-    overflow-x: auto;
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     display: flex;

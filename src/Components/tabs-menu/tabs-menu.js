@@ -6,43 +6,28 @@ export function createTabsMenu() {
   main.innerHTML = html;
   main.classList.add("tabs-menu-container");
   const tabs = Array.from(main.getElementsByClassName("tabs-menu-item"));
-  main.addEventListener("mousedown", (e) => {
-    grabScroll(e, main);
-  });
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      tab.scrollIntoView({ behavior: "smooth", inline: "center" });
       document
         .getElementsByClassName("tabs-menu-item-selected")[0]
         .classList.remove("tabs-menu-item-selected");
       tab.classList.add("tabs-menu-item-selected");
     });
   });
-
+  // mouseMOveScroll(main);
   return main;
 }
 
-function grabScroll(event, element) {
-  let left = element.scrollLeft;
-  let x = event.clientX;
-  element.style.cursor = "grabbing";
-
-  element.addEventListener("mousemove", function move(e) {
-    moveScroll(e, left, x);
+/* Code to make the container scroll with mouse movement.
+function mouseMOveScroll(main) {
+  const wdx = window.innerWidth;
+  const mainx = main.clientWidth;
+  main.addEventListener("mousemove", (e) => {
+    main.scroll({
+      left: ((wdx - mainx) * (e.pageX / wdx).toFixed(3)).toFixed(1),
+      behavior: "smooth",
+    });
   });
-  element.addEventListener("mouseup", mouseUpHandler);
 }
-
-function moveScroll(event, left, x) {
-  // How far the mouse has been moved
-  const dx = event.clientX - x;
-
-  // Scroll the element
-  event.target.scrollLeft = left - dx;
-}
-
-function mouseUpHandler(element) {
-  element.removeEventListener("mousemove", move);
-  element.removeEventListener("mouseup", mouseUpHandler);
-
-  element.style.cursor = "grab";
-}
+*/
