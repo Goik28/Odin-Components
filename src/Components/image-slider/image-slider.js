@@ -8,6 +8,8 @@ export function createImageSlider() {
   selectImage(main);
   nextImage(main);
   previousImage(main);
+  setInterval(rotateImages, 2500, main);
+
   return main;
 }
 
@@ -21,7 +23,7 @@ function selectImage(main) {
   inputs.forEach((element, index) => {
     element.addEventListener("click", () => {
       element.checked = true;
-      document
+      main
         .getElementsByClassName("image-item-selected")[0]
         .classList.remove("image-item-selected");
       images[index].classList.add("image-item-selected");
@@ -83,4 +85,20 @@ function previousImage(main) {
         images[activeIndex - 1].classList.add("image-item-selected");
       }
     });
+}
+
+function rotateImages(main) {
+  const inputs = Array.from(
+    main
+      .getElementsByClassName("image-selector")[0]
+      .getElementsByTagName("input")
+  );
+  const activeIndex = inputs.findIndex((element) => {
+    return element.checked == true;
+  });
+  if (activeIndex == inputs.length - 1) {
+    inputs[0].click();
+  } else {
+    inputs[activeIndex + 1].click();
+  }
 }
