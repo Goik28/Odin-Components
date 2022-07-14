@@ -10,6 +10,8 @@
 
 .image-item > img {
   width: 640px;
+  height: 565px;
+  overflow: hidden;
 }
 
 .image-item-selected {
